@@ -83,12 +83,12 @@ export default function CrudModal({
             </select>
           </div>
         </div>
-        <label>Rota</label>
+        <label>Observação</label>
         <input
           type="text"
           value={route}
           onChange={(e) => setRoute(e.target.value)}
-          placeholder="Ex: /relatorios"
+          placeholder="Ex: Precisa revisar com o time"
         />
         <label>Chave do print</label>
         <input

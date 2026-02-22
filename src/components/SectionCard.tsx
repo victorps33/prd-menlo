@@ -10,6 +10,7 @@ interface SectionCardProps {
   onFeatureClick: (feature: Feature) => void;
   onFeatureDoubleClick: (feature: Feature) => void;
   onFeatureDelete: (feature: Feature) => void;
+  onFeatureUpdate: (feature: Feature, changes: Partial<Feature>) => void;
   onAddFeature: (sectionId: number) => void;
   replacedIds: Set<string>;
   hidden: boolean;
@@ -22,6 +23,7 @@ export default function SectionCard({
   onFeatureClick,
   onFeatureDoubleClick,
   onFeatureDelete,
+  onFeatureUpdate,
   onAddFeature,
   replacedIds,
   hidden,
@@ -46,7 +48,7 @@ export default function SectionCard({
             <th>Feature</th>
             <th>MVP</th>
             <th>Compl.</th>
-            <th>Rota</th>
+            <th>OBS</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +60,7 @@ export default function SectionCard({
               onClick={() => onFeatureClick(f)}
               onDoubleClick={() => onFeatureDoubleClick(f)}
               onDelete={() => onFeatureDelete(f)}
+              onUpdate={(changes) => onFeatureUpdate(f, changes)}
               isReplaced={replacedIds.has(f.id)}
             />
           ))}

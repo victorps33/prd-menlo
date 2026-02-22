@@ -31,12 +31,12 @@ body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sa
 .ft{width:100%;border-collapse:collapse}
 .ft th{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--g5c);padding:6px 14px;text-align:left;border-bottom:1px solid var(--g2)}
 .ft th:nth-child(2),.ft th:nth-child(3){text-align:center;width:50px}
-.ft th:last-child{text-align:center;width:80px}
+.ft th:last-child{text-align:left;width:160px}
 .fr{transition:background .15s;cursor:pointer}
 .fr:hover{background:rgba(248,91,0,.03)}
 .fr td{padding:6px 14px;border-bottom:1px solid var(--g1);font-size:12px;vertical-align:middle}
 .fr td:nth-child(2),.fr td:nth-child(3){text-align:center}
-.fr td:last-child{text-align:center}
+.fr td:last-child{text-align:left}
 .fn{display:inline-flex;align-items:center;gap:5px;color:var(--g8)}
 .fr:hover .fn{color:var(--orange)}
 .fe{width:14px;height:14px;opacity:0;transition:opacity .15s;flex-shrink:0}
@@ -95,3 +95,14 @@ body{font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sa
 .crud-save:hover{background:var(--orange-h)}
 .crud-cancel{padding:8px 20px;border-radius:8px;border:1px solid var(--g3);background:#fff;color:var(--g6);font-size:12px;cursor:pointer;transition:all .15s}
 .crud-cancel:hover{border-color:var(--g4)}
+.obs-cell{position:relative}
+.obs-text{font-size:11px;color:var(--g4);cursor:text;display:inline-block;min-width:60px;padding:2px 4px;border-radius:4px;transition:background .15s}
+.obs-text:hover{background:var(--g1);color:var(--g6)}
+.obs-input{width:calc(100% - 30px);padding:3px 6px;border:1px solid var(--orange);border-radius:4px;font-size:11px;font-family:inherit;outline:none;background:#fff}
+.toggle-check{cursor:pointer;transition:opacity .15s;user-select:none}
+.toggle-check:hover{opacity:.7}
+.name-input{width:100%;padding:4px 8px;border:1px solid var(--orange);border-radius:4px;font-size:12px;font-family:inherit;outline:none;background:#fff}
+.row-action{opacity:0;border:none;background:none;cursor:pointer;font-size:11px;padding:2px 4px;border-radius:4px;transition:all .15s;color:var(--g4);flex-shrink:0;margin-left:2px}
+.fr:hover .row-action{opacity:1}
+.edit-btn:hover{color:var(--orange);background:rgba(248,91,0,.08)}
+.del-btn:hover{color:#ef4444;background:#fef2f2}

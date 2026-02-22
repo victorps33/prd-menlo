@@ -85,6 +85,20 @@ function PrdViewerInner() {
     [dispatch, deleteFeature]
   );
 
+  // Inline update (toggle MVP/Complete, edit OBS)
+  const handleFeatureUpdate = useCallback(
+    (feature: Feature, changes: Partial<Feature>) => {
+      const updated: Feature = {
+        ...feature,
+        ...changes,
+        updated_at: new Date().toISOString(),
+      };
+      dispatch({ type: 'UPDATE_FEATURE', payload: updated });
+      updateFeature(updated);
+    },
+    [dispatch, updateFeature]
+  );
+
   // Add feature button
   const handleAddFeature = useCallback((sectionId: number) => {
     setEditingFeature(null);
@@ -206,6 +220,7 @@ function PrdViewerInner() {
               onFeatureClick={handleFeatureClick}
               onFeatureDoubleClick={handleFeatureDoubleClick}
               onFeatureDelete={handleFeatureDelete}
+              onFeatureUpdate={handleFeatureUpdate}
               onAddFeature={handleAddFeature}
               replacedIds={replacedIds}
               hidden={features.length === 0}
