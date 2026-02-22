@@ -227,7 +227,7 @@ function PrdViewerInner() {
             />
           ))}
 
-          <div className="fo">Menlo Cobrança · PRD Interativa · 2026</div>
+          <div className="fo">Menlo Cobrança · PRD · 2026</div>
         </div>
       </div>
 

@@ -38,7 +38,7 @@ export default function Sidebar() {
             document.getElementById(`e${s.id}`)?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          {s.id}. {s.title.split(' ').slice(0, 2).join(' ')}
+          {s.id}. {s.title}
         </a>
       ))}
       <div className="sd-l" style={{ marginTop: 10 }}>Links</div>

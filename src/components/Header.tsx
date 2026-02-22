@@ -19,7 +19,7 @@ export default function Header({ searchQuery, onSearchChange, visibleCount }: He
     <div className="hd">
       <div className="hd-in">
         <h1>
-          PRD Interativa — <span>Menlo</span> Cobrança
+          PRD — <span>Menlo</span> Cobrança
         </h1>
         <p>Clique em qualquer feature para ver o print. Duplo-clique para editar.</p>
         <div className="hd-st">

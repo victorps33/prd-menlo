@@ -53,7 +53,7 @@ export default function LoginPage() {
         }}
       >
         <h1 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>
-          PRD Interativa — <span style={{ color: 'var(--orange)' }}>Menlo</span>
+          PRD — <span style={{ color: 'var(--orange)' }}>Menlo</span> Cobrança
         </h1>
         <p style={{ fontSize: 12, color: 'var(--g5c)', marginBottom: 24 }}>
           Acesse com seu e-mail para visualizar e editar a PRD.
