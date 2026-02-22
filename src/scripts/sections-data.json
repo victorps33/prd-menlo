@@ -1,0 +1,1213 @@
+[
+  {
+    "id": 1,
+    "title": "Onboarding e Configuração Inicial",
+    "desc": "Registro, wizard de 4 passos, checklist de progresso e configuração de integrações.",
+    "features": [
+      [
+        "Registro com e-mail e senha",
+        "✓",
+        "✓",
+        "/auth/register",
+        "auth-login-form"
+      ],
+      [
+        "Login com Google OAuth",
+        "—",
+        "✓",
+        "/auth/login",
+        "auth-google-oauth"
+      ],
+      [
+        "Wizard de onboarding 4 passos",
+        "✓",
+        "✓",
+        "/",
+        "dash-kpi-grid"
+      ],
+      [
+        "Checklist de progresso pós-wizard",
+        "✓",
+        "✓",
+        "/",
+        "dash-checklist"
+      ],
+      [
+        "Dismiss do checklist pelo usuário",
+        "✓",
+        "✓",
+        "/",
+        "dash-checklist"
+      ],
+      [
+        "Cadastro da franqueadora (razão social, CNPJ, contatos)",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-empresa"
+      ],
+      [
+        "Configuração de cobrança padrão (vencimento, juros, multa)",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-cobrancas"
+      ],
+      [
+        "Conexão com Omie ERP (sync bidirecional)",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-integracoes-omie"
+      ],
+      [
+        "Conexão com Twilio (SMS e WhatsApp)",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-integracoes-twilio"
+      ],
+      [
+        "Conexão com Customer.io (e-mail transacional)",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-integracoes-customerio"
+      ],
+      [
+        "Convite de usuários com perfis de acesso (4 perfis)",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-invite-btn"
+      ],
+      [
+        "Onboarding da Júlia IA (wizard com consentimento LGPD)",
+        "✓",
+        "✓",
+        "/",
+        "cfg-julia-card"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Cadastro da Base de Franqueados",
+    "desc": "Cadastro individual e em massa, validação de CNPJ, classificação de saúde e KPIs.",
+    "features": [
+      [
+        "Cadastro individual (razão social, CNPJ, contato, endereço)",
+        "✓",
+        "✓",
+        "/clientes/novo",
+        "cli-novo-form"
+      ],
+      [
+        "Detecção de CNPJ duplicado com banner de alerta",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-tabela"
+      ],
+      [
+        "Status da unidade (Aberta / Fechada / Vendida)",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-status-tabs"
+      ],
+      [
+        "Classificação de saúde automática",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-row-avatar"
+      ],
+      [
+        "Importação em massa via Excel (.xlsx)",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-import-export"
+      ],
+      [
+        "Exportação da base filtrada em Excel",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-export"
+      ],
+      [
+        "Sincronização automática com Omie ERP",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-integracoes-sync"
+      ],
+      [
+        "Webhook Omie para atualizações em tempo real",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-integracoes-webhook"
+      ],
+      [
+        "KPIs por franqueado (emitido, recebido, aberto, PMR)",
+        "✓",
+        "✓",
+        "/clientes/[id]",
+        "cli-det-cobrancas"
+      ],
+      [
+        "Página de detalhe com cobranças vinculadas",
+        "✓",
+        "✓",
+        "/clientes/[id]",
+        "cli-det-page"
+      ],
+      [
+        "Busca por nome, CNPJ, cidade, bairro, responsável",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-search"
+      ],
+      [
+        "Filtro por status da unidade",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-status-tabs"
+      ],
+      [
+        "Paginação (15 registros/página)",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-tabela-paginacao"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Apuração e Faturamento da Rede",
+    "desc": "Ciclos de apuração por competência, breakdown por franquia, importação/exportação.",
+    "features": [
+      [
+        "Criação de ciclos de apuração por competência (wizard)",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-novo-ciclo"
+      ],
+      [
+        "Seletor de competência com exclusão de ciclos concluídos",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-competencia"
+      ],
+      [
+        "Badge de prazo com contagem regressiva",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-prazo"
+      ],
+      [
+        "Breakdown por franquia (PDV, iFood, Rappi, royalties)",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-fontes"
+      ],
+      [
+        "KPIs do histórico (total apurado, ciclos, média)",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-stepper"
+      ],
+      [
+        "Cálculo automático de royalties e marketing (%)",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-regras"
+      ],
+      [
+        "Importação de dados via planilha Excel",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-upload"
+      ],
+      [
+        "Histórico de apurações com expansão de detalhe",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-historico"
+      ],
+      [
+        "Exportação detalhada por franquia em Excel",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-fontes"
+      ],
+      [
+        "Controle de NF emitida por franquia",
+        "✓",
+        "✓",
+        "/apuracao",
+        "apu-dados"
+      ],
+      [
+        "Emissão automática de NF (configurável)",
+        "—",
+        "✓",
+        "/configuracoes",
+        "cfg-apuracao"
+      ],
+      [
+        "Importação automática do faturamento via PDV",
+        "—",
+        "✓",
+        "/apuracao",
+        "cfg-integracoes-pdv"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Emissão e Gestão de Cobranças",
+    "desc": "Wizard de criação, sincronização Omie, ciclo de status, filtros e geração de boleto.",
+    "features": [
+      [
+        "Wizard de criação de cobrança",
+        "✓",
+        "✓",
+        "/cobrancas/nova",
+        "cob-nova-form"
+      ],
+      [
+        "Sincronização de títulos com Omie ERP",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-tabela-sync"
+      ],
+      [
+        "Webhook Omie para criação automática",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-tabela-sync"
+      ],
+      [
+        "Ciclo de status (Pendente → Paga / Vencida / Cancelada)",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-status-badge"
+      ],
+      [
+        "Atualização automática de status por vencimento",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-status-badge"
+      ],
+      [
+        "Organização por competência (mês/ano)",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-filtros-comp"
+      ],
+      [
+        "Categorias: Royalties, FNP, Taxa de Franquia, Produto",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-filtros-cat"
+      ],
+      [
+        "Formas de pagamento: Boleto, Pix, Cartão",
+        "✓",
+        "✓",
+        "/cobrancas/nova",
+        "cob-nova-pagamento"
+      ],
+      [
+        "Exibição de dias relativos ao vencimento",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-tabela-dias"
+      ],
+      [
+        "Filtros por competência, status, categoria e busca",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-search"
+      ],
+      [
+        "Geração de boleto (linha digitável, código de barras)",
+        "✓",
+        "✓",
+        "/cobrancas/[id]",
+        "cob-det-pagamento"
+      ],
+      [
+        "Emissão de NF (dialog para Royalties/FNP)",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-nf-btn"
+      ],
+      [
+        "Página de detalhe da cobrança",
+        "✓",
+        "✓",
+        "/cobrancas/[id]",
+        "cob-det-header"
+      ],
+      [
+        "KPIs de cobranças (emitido, recebido, aberto, vencido)",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-kpi-grid"
+      ],
+      [
+        "Paginação (15 registros/página)",
+        "✓",
+        "✓",
+        "/cobrancas",
+        "cob-paginacao"
+      ],
+      [
+        "Exportação de cobranças em Excel",
+        "—",
+        "✓",
+        "/cobrancas",
+        "cob-kpi-export"
+      ],
+      [
+        "Edição e cancelamento de cobrança",
+        "—",
+        "✓",
+        "/cobrancas/[id]",
+        "cob-det-edit"
+      ],
+      [
+        "Negociação e parcelamento",
+        "—",
+        "✓",
+        "/cobrancas/[id]",
+        "cob-det-negociacao"
+      ],
+      [
+        "Configuração de juros e multa no wizard",
+        "✓",
+        "✓",
+        "/cobrancas/nova",
+        "cob-nova-juros"
+      ],
+      [
+        "Seleção de cliente no wizard",
+        "✓",
+        "✓",
+        "/cobrancas/nova",
+        "cob-nova-cliente"
+      ],
+      [
+        "Resumo da cobrança antes de confirmar",
+        "✓",
+        "✓",
+        "/cobrancas/nova",
+        "cob-nova-resumo"
+      ],
+      [
+        "Stepper do wizard de cobrança",
+        "✓",
+        "✓",
+        "/cobrancas/nova",
+        "cob-nova-stepper"
+      ],
+      [
+        "Detalhes financeiros da cobrança (juros, multa, desconto)",
+        "✓",
+        "✓",
+        "/cobrancas/[id]",
+        "cob-det-financeiro"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Réguas de Cobrança Automatizadas",
+    "desc": "Estratégias multicanal com timeline visual, execução via cron e logging.",
+    "features": [
+      [
+        "Criação de réguas (nome, timezone, status)",
+        "✓",
+        "✓",
+        "/reguas",
+        "reg-card"
+      ],
+      [
+        "Steps configuráveis (D-X, D0, D+X + canal + template)",
+        "✓",
+        "✓",
+        "/reguas/[id]",
+        "reg-det-steps"
+      ],
+      [
+        "Templates com variáveis dinâmicas",
+        "✓",
+        "✓",
+        "/reguas/[id]",
+        "reg-det-templates"
+      ],
+      [
+        "Canais por step (E-mail, SMS, WhatsApp)",
+        "✓",
+        "✓",
+        "/reguas/[id]",
+        "reg-det-canais"
+      ],
+      [
+        "Régua padrão criada no onboarding",
+        "✓",
+        "✓",
+        "/reguas",
+        "reg-card"
+      ],
+      [
+        "Ativação/desativação por step individual",
+        "✓",
+        "✓",
+        "/reguas",
+        "reg-toggle"
+      ],
+      [
+        "Timeline visual animada com marcador D0 pulsante",
+        "✓",
+        "✓",
+        "/reguas",
+        "reg-timeline"
+      ],
+      [
+        "Execução automática via cron job",
+        "✓",
+        "✓",
+        "/reguas",
+        "reg-card"
+      ],
+      [
+        "Fila de mensagens com despacho agendado",
+        "✓",
+        "✓",
+        "/logs",
+        "log-canal-badge"
+      ],
+      [
+        "Retry automático de mensagens falhadas",
+        "✓",
+        "✓",
+        "/logs",
+        "log-status-badge"
+      ],
+      [
+        "Webhooks de status de entrega",
+        "✓",
+        "✓",
+        "/logs",
+        "log-status-badge"
+      ],
+      [
+        "Logs detalhados por notificação",
+        "✓",
+        "✓",
+        "/logs",
+        "log-filtros"
+      ],
+      [
+        "Respeito a horário comercial configurável",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-notificacoes"
+      ],
+      [
+        "Adicionar step à régua",
+        "✓",
+        "✓",
+        "/reguas/[id]",
+        "reg-det-add-btn"
+      ],
+      [
+        "Header da régua com toggle ativo/inativo",
+        "✓",
+        "✓",
+        "/reguas/[id]",
+        "reg-det-header"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Comunicação Multicanal e Inbox",
+    "desc": "Caixa de entrada unificada com conversas, filtros e dashboard do agente IA.",
+    "features": [
+      [
+        "Lista de conversas com preview e não lidos",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-lista"
+      ],
+      [
+        "Filtros por status (Aberta / Pendente IA / Humano / Resolvida)",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-filtros-status"
+      ],
+      [
+        "Filtro por canal (E-mail, SMS, WhatsApp)",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-filtros-canal"
+      ],
+      [
+        "Filtro por responsável e busca textual",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-filtros-busca"
+      ],
+      [
+        "Histórico de mensagens com badges por tipo",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-badges"
+      ],
+      [
+        "Compositor de mensagens com indicador de canal",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-compositor"
+      ],
+      [
+        "Badge de não lidos no menu lateral",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-tabs"
+      ],
+      [
+        "Read receipts por conversa e usuário",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-read-receipts"
+      ],
+      [
+        "Inbound via webhooks (Twilio + Customer.io)",
+        "✓",
+        "✓",
+        "/inbox",
+        "inbox-inbound"
+      ],
+      [
+        "Aba 'Agente IA' com dashboard de métricas",
+        "✓",
+        "✓",
+        "/inbox?tab=agente",
+        "inbox-agente"
+      ],
+      [
+        "Painel de contexto (franqueado, cobranças, histórico)",
+        "—",
+        "✓",
+        "/inbox",
+        "inbox-compositor"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Agente de Cobrança com IA — MIA",
+    "desc": "Agente autônomo que adapta comunicação ao perfil do franqueado e escala para humano.",
+    "features": [
+      [
+        "Processamento de mensagens inbound",
+        "✓",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-processamento"
+      ],
+      [
+        "Log de decisões (ação, confiança %, reasoning)",
+        "✓",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-log"
+      ],
+      [
+        "Dashboard do agente (métricas, breakdown)",
+        "✓",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-dashboard"
+      ],
+      [
+        "Lista de escalações ativas com motivo",
+        "✓",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-escalacoes"
+      ],
+      [
+        "Resolução de escalações pelo operador",
+        "✓",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-resolucao"
+      ],
+      [
+        "Cobrança autônoma adaptada ao perfil",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-autonomo"
+      ],
+      [
+        "Adaptação por canal (WhatsApp, SMS, E-mail)",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-canal"
+      ],
+      [
+        "Adaptação por nível de risco",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-risco"
+      ],
+      [
+        "Registro automático de promessas de pagamento",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-promessa"
+      ],
+      [
+        "Oferecimento de parcelamento",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-parcelamento"
+      ],
+      [
+        "Escalação automática (ameaça, distress, disputa)",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-escalacao-auto"
+      ],
+      [
+        "7 tipos de ação do agente",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-7-acoes"
+      ],
+      [
+        "Ligação proativa",
+        "—",
+        "✓",
+        "/inbox?tab=agente",
+        "agente-ligacao"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Assistente de Inteligência — Júlia",
+    "desc": "Assistente conversacional com Claude, insights em tempo real, charts e anonimização.",
+    "features": [
+      [
+        "Painel conversacional integrado (overlay)",
+        "✓",
+        "✓",
+        "/",
+        "julia-streaming"
+      ],
+      [
+        "Streaming de respostas via SSE",
+        "✓",
+        "✓",
+        "/",
+        "julia-streaming"
+      ],
+      [
+        "6 perguntas preset com cache de 5 min",
+        "✓",
+        "✓",
+        "/",
+        "julia-presets"
+      ],
+      [
+        "Contexto de dados reais da rede injetado no prompt",
+        "✓",
+        "✓",
+        "/",
+        "dash-contexto"
+      ],
+      [
+        "Anonimização automática de PII",
+        "✓",
+        "✓",
+        "/",
+        "cfg-julia-anonimizacao"
+      ],
+      [
+        "Rate limiting (30 msg/hora por usuário)",
+        "✓",
+        "✓",
+        "/",
+        "cfg-julia-rate-limit"
+      ],
+      [
+        "Logging estruturado (sem conteúdo)",
+        "✓",
+        "✓",
+        "/",
+        "cfg-julia-logging"
+      ],
+      [
+        "Dois níveis de detalhe (resumido / detalhado)",
+        "✓",
+        "✓",
+        "/",
+        "julia-detalhes"
+      ],
+      [
+        "Sugestões de follow-up geradas pela IA",
+        "✓",
+        "✓",
+        "/",
+        "julia-followup"
+      ],
+      [
+        "Plano de ações executáveis",
+        "✓",
+        "✓",
+        "/",
+        "julia-plano"
+      ],
+      [
+        "Charts inline (bar, pie, line, area)",
+        "✓",
+        "✓",
+        "/",
+        "dash-chart-0"
+      ],
+      [
+        "Histórico de conversas em localStorage",
+        "✓",
+        "✓",
+        "/",
+        "julia-historico"
+      ],
+      [
+        "Alertas proativos (piora de métricas)",
+        "✓",
+        "✓",
+        "/",
+        "dash-kpi-0"
+      ],
+      [
+        "Wizard de onboarding com consentimento LGPD",
+        "✓",
+        "✓",
+        "/",
+        "julia-streaming"
+      ],
+      [
+        "Toggle de ativação/desativação",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-julia-toggle"
+      ],
+      [
+        "Tratamento de erros (429, 503, 500) + retry",
+        "✓",
+        "✓",
+        "/",
+        "cfg-julia-erros"
+      ],
+      [
+        "Footer de segurança",
+        "✓",
+        "✓",
+        "/",
+        "cfg-julia-footer"
+      ],
+      [
+        "Recomendações de estratégia personalizadas",
+        "—",
+        "✓",
+        "/",
+        "dash-chart-1"
+      ],
+      [
+        "Avaliação de risco preditiva",
+        "—",
+        "✓",
+        "/",
+        "dash-kpi-2"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "title": "CRM de Cobrança",
+    "desc": "Cards de cliente com métricas, timeline de interações e gestão de tarefas.",
+    "features": [
+      [
+        "Cards de cliente (contato, cobranças, saldo, saúde)",
+        "✓",
+        "✓",
+        "/crm",
+        "crm-client-card"
+      ],
+      [
+        "Métricas calculadas por cliente",
+        "✓",
+        "✓",
+        "/crm",
+        "crm-metricas"
+      ],
+      [
+        "Timeline cronológica de interações",
+        "✓",
+        "✓",
+        "/crm",
+        "crm-timeline"
+      ],
+      [
+        "Registro de nova interação",
+        "✓",
+        "✓",
+        "/crm",
+        "crm-nova-interacao"
+      ],
+      [
+        "Tarefas de cobrança (título, prioridade, prazo)",
+        "✓",
+        "✓",
+        "/crm?tab=tarefas",
+        "crm-tarefas"
+      ],
+      [
+        "4 níveis de prioridade (Baixa → Crítica)",
+        "✓",
+        "✓",
+        "/crm?tab=tarefas",
+        "crm-prioridade"
+      ],
+      [
+        "Fluxo de tarefas (Pendente → Concluída)",
+        "✓",
+        "✓",
+        "/crm?tab=tarefas",
+        "crm-tarefas-fluxo"
+      ],
+      [
+        "Vínculo tarefa ↔ franqueado ↔ cobrança",
+        "✓",
+        "✓",
+        "/crm?tab=tarefas",
+        "crm-tarefas-vinculo"
+      ],
+      [
+        "Exportação de tarefas em Excel",
+        "✓",
+        "✓",
+        "/crm?tab=tarefas",
+        "crm-export-btn"
+      ],
+      [
+        "Filtros por status e prioridade",
+        "—",
+        "✓",
+        "/crm?tab=tarefas",
+        "crm-tarefas-filtros"
+      ],
+      [
+        "Tabs Clientes / Tarefas",
+        "✓",
+        "✓",
+        "/crm",
+        "crm-tabs"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Dashboard e Inteligência",
+    "desc": "KPIs em tempo real, gráficos interativos, heatmap e Command Palette.",
+    "features": [
+      [
+        "KPI: Total Emitido",
+        "✓",
+        "✓",
+        "/",
+        "dash-kpi-0"
+      ],
+      [
+        "KPI: Total Recebido",
+        "✓",
+        "✓",
+        "/",
+        "dash-kpi-1"
+      ],
+      [
+        "KPI: Taxa de Inadimplência",
+        "✓",
+        "✓",
+        "/",
+        "dash-kpi-2"
+      ],
+      [
+        "KPI: Cobranças Pendentes",
+        "✓",
+        "✓",
+        "/",
+        "dash-kpi-3"
+      ],
+      [
+        "Gráfico Recebido vs. Emitido",
+        "✓",
+        "✓",
+        "/",
+        "dash-chart-0"
+      ],
+      [
+        "Evolução de status (Pagas / Pendentes / Vencidas)",
+        "✓",
+        "✓",
+        "/",
+        "dash-chart-1"
+      ],
+      [
+        "Distribuição por forma de pagamento",
+        "✓",
+        "✓",
+        "/",
+        "dash-chart-2"
+      ],
+      [
+        "Seletor de competência (mês/ano)",
+        "✓",
+        "✓",
+        "/",
+        "dash-competencia"
+      ],
+      [
+        "Command Palette (Cmd+K / Ctrl+K)",
+        "✓",
+        "✓",
+        "/",
+        "topbar-search"
+      ],
+      [
+        "Curva de safra (envelhecimento da carteira)",
+        "—",
+        "✓",
+        "/",
+        "dash-safra"
+      ],
+      [
+        "Mapa de calor geográfico por região",
+        "—",
+        "✓",
+        "/",
+        "dash-mapa-calor"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Logs de Notificação",
+    "desc": "Registro centralizado de todas as notificações com filtros e detalhe.",
+    "features": [
+      [
+        "Lista de logs com paginação",
+        "✓",
+        "✓",
+        "/logs",
+        "log-filtros"
+      ],
+      [
+        "Filtro por canal (E-mail, SMS, WhatsApp)",
+        "✓",
+        "✓",
+        "/logs",
+        "log-canal-filtro"
+      ],
+      [
+        "Filtro por status (Enviado, Falhou, Ignorado)",
+        "✓",
+        "✓",
+        "/logs",
+        "log-status-filtro"
+      ],
+      [
+        "Dialog de detalhe com conteúdo da mensagem",
+        "✓",
+        "✓",
+        "/logs",
+        "log-detalhe"
+      ],
+      [
+        "Link para cobrança vinculada",
+        "✓",
+        "✓",
+        "/logs",
+        "log-link-cobranca"
+      ],
+      [
+        "Indicação da régua e trigger de origem",
+        "✓",
+        "✓",
+        "/logs",
+        "log-regua-trigger"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Administração e Configurações",
+    "desc": "7 abas: Empresa, Cobranças, Notificações, Apuração, Integrações, Usuários, Aparência.",
+    "features": [
+      [
+        "Empresa — Perfil da franqueadora",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-empresa-sec12"
+      ],
+      [
+        "Cobranças — Vencimento, juros, multa, forma de pagamento",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-cobrancas-sec12"
+      ],
+      [
+        "Notificações — Toggles de canal, horário, remetente",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-notificacoes-sec12"
+      ],
+      [
+        "Apuração — Royalties %, FNP %, base de cálculo",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-apuracao-sec12"
+      ],
+      [
+        "Integrações — Twilio, fontes de dados, webhook URL",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-integracoes-sec12"
+      ],
+      [
+        "Integrações — Card Júlia IA com status",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-julia-card-sec12"
+      ],
+      [
+        "Integrações — Toggle da Júlia IA",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-julia-toggle-sec12"
+      ],
+      [
+        "Usuários — Tabela e convite por e-mail",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-usuarios"
+      ],
+      [
+        "Usuários — Botão de convite com perfil",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-invite-btn-sec12"
+      ],
+      [
+        "Aparência — Tema (claro/escuro), sidebar",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-aparencia"
+      ],
+      [
+        "Simulação de tempo (avançar data)",
+        "✓",
+        "✓",
+        "/",
+        "topbar-time-badge"
+      ],
+      [
+        "Badge de data na TopBar (real / simulado)",
+        "✓",
+        "✓",
+        "/",
+        "topbar-time-badge"
+      ],
+      [
+        "Sidebar de navegação das configurações",
+        "✓",
+        "✓",
+        "/configuracoes",
+        "cfg-sidebar"
+      ],
+      [
+        "Franqueadora card na aba Empresa",
+        "✓",
+        "✓",
+        "/clientes",
+        "cli-franqueadora"
+      ],
+      [
+        "Link 'Ver no CRM' no detalhe do cliente",
+        "✓",
+        "✓",
+        "/clientes/[id]",
+        "cli-det-crm-btn"
+      ]
+    ]
+  }
+]
