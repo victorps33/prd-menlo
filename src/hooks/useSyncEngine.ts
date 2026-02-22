@@ -209,6 +209,17 @@ export function useSyncEngine() {
     [pushChange]
   );
 
+  const updateSection = useCallback(
+    (sectionId: number, changes: Partial<Section>) => {
+      pushChange({
+        type: 'update',
+        table: 'sections',
+        data: { id: sectionId, ...changes, updated_at: new Date().toISOString() },
+      });
+    },
+    [pushChange]
+  );
+
   const uploadImage = useCallback(
     async (file: File, featureId: string, currentKey: string): Promise<string | null> => {
       const supabase = supabaseRef.current;
@@ -242,6 +253,7 @@ export function useSyncEngine() {
     addFeature,
     updateFeature,
     deleteFeature,
+    updateSection,
     uploadImage,
     syncFromSupabase,
     pendingCount,

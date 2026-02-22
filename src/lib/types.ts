@@ -26,13 +26,14 @@ export type PrdAction =
   | { type: 'ADD_FEATURE'; payload: { section_id: number; feature: Feature } }
   | { type: 'UPDATE_FEATURE'; payload: Feature }
   | { type: 'DELETE_FEATURE'; payload: { id: string; section_id: number } }
-  | { type: 'UPDATE_IMAGE'; payload: { feature_id: string; image_key: string } };
+  | { type: 'UPDATE_IMAGE'; payload: { feature_id: string; image_key: string } }
+  | { type: 'UPDATE_SECTION'; payload: { id: number; changes: Partial<Section> } };
 
 export interface PendingChange {
   id: string;
   type: 'insert' | 'update' | 'delete';
-  table: 'features';
-  data: Partial<Feature> & { id: string };
+  table: 'features' | 'sections';
+  data: (Partial<Feature> | Partial<Section>) & { id: string | number };
   timestamp: number;
 }
 

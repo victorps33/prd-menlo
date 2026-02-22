@@ -25,7 +25,7 @@ function getImageUrl(imageKey: string): string {
 function PrdViewerInner() {
   const { sections } = usePrd();
   const dispatch = usePrdDispatch();
-  const { addFeature, updateFeature, deleteFeature, uploadImage, pendingCount } = useSyncEngine();
+  const { addFeature, updateFeature, deleteFeature, updateSection, uploadImage, pendingCount } = useSyncEngine();
 
   // Search
   const { searchQuery, setSearchQuery, filteredSections, visibleCount, allVisibleFeatures } =
@@ -97,6 +97,15 @@ function PrdViewerInner() {
       updateFeature(updated);
     },
     [dispatch, updateFeature]
+  );
+
+  // Section update (description/epic editing)
+  const handleSectionUpdate = useCallback(
+    (sectionId: number, changes: Partial<Section>) => {
+      dispatch({ type: 'UPDATE_SECTION', payload: { id: sectionId, changes } });
+      updateSection(sectionId, changes);
+    },
+    [dispatch, updateSection]
   );
 
   // Add feature button
@@ -222,6 +231,7 @@ function PrdViewerInner() {
               onFeatureDelete={handleFeatureDelete}
               onFeatureUpdate={handleFeatureUpdate}
               onAddFeature={handleAddFeature}
+              onSectionUpdate={handleSectionUpdate}
               replacedIds={replacedIds}
               hidden={features.length === 0}
             />

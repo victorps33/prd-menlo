@@ -75,6 +75,16 @@ function prdReducer(state: PrdState, action: PrdAction): PrdState {
       };
     }
 
+    case 'UPDATE_SECTION': {
+      const { id, changes } = action.payload;
+      return {
+        ...state,
+        sections: state.sections.map((s) =>
+          s.id === id ? { ...s, ...changes, updated_at: new Date().toISOString() } : s
+        ),
+      };
+    }
+
     default:
       return state;
   }

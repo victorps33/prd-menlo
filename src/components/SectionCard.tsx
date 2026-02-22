@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useRef, useEffect } from 'react';
 import type { Section, Feature } from '@/lib/types';
 import FeatureRow from './FeatureRow';
 
@@ -12,6 +13,7 @@ interface SectionCardProps {
   onFeatureDelete: (feature: Feature) => void;
   onFeatureUpdate: (feature: Feature, changes: Partial<Feature>) => void;
   onAddFeature: (sectionId: number) => void;
+  onSectionUpdate: (sectionId: number, changes: Partial<Section>) => void;
   replacedIds: Set<string>;
   hidden: boolean;
 }
@@ -25,9 +27,36 @@ export default function SectionCard({
   onFeatureDelete,
   onFeatureUpdate,
   onAddFeature,
+  onSectionUpdate,
   replacedIds,
   hidden,
 }: SectionCardProps) {
+  const [editingDesc, setEditingDesc] = useState(false);
+  const [descValue, setDescValue] = useState(section.description);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    setDescValue(section.description);
+  }, [section.description]);
+
+  useEffect(() => {
+    if (editingDesc && textareaRef.current) {
+      textareaRef.current.focus();
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
+    }
+  }, [editingDesc]);
+
+  const handleDescSave = () => {
+    setEditingDesc(false);
+    const trimmed = descValue.trim();
+    if (trimmed !== section.description) {
+      onSectionUpdate(section.id, { description: trimmed });
+    } else {
+      setDescValue(section.description);
+    }
+  };
+
   if (hidden) return null;
 
   return (
@@ -36,7 +65,39 @@ export default function SectionCard({
         <div className="et-n">{section.id}</div>
         <div className="et-t">{section.title}</div>
       </div>
-      <div className="et-d">{section.description}</div>
+      <div
+        className="et-d"
+        onClick={() => !editingDesc && setEditingDesc(true)}
+        title="Clique para editar o épico"
+        style={{ cursor: editingDesc ? 'default' : 'pointer' }}
+      >
+        {editingDesc ? (
+          <textarea
+            ref={textareaRef}
+            className="desc-input"
+            value={descValue}
+            onChange={(e) => {
+              setDescValue(e.target.value);
+              e.target.style.height = 'auto';
+              e.target.style.height = e.target.scrollHeight + 'px';
+            }}
+            onBlur={handleDescSave}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleDescSave();
+              }
+              if (e.key === 'Escape') {
+                setDescValue(section.description);
+                setEditingDesc(false);
+              }
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        ) : (
+          <span className="desc-text">{section.description || 'Clique para adicionar épico...'}</span>
+        )}
+      </div>
       <div className="crud-bar">
         <button className="crud-btn" onClick={() => onAddFeature(section.id)}>
           + Adicionar feature
