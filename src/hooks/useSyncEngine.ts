@@ -78,6 +78,10 @@ export function useSyncEngine() {
       // First, flush any pending changes
       await flushPending();
 
+      // Don't overwrite local state if there are still pending changes
+      const stillPending = readLS<PendingChange[]>(LS_PENDING, []);
+      if (stillPending.length > 0) return;
+
       const supabase = supabaseRef.current;
 
       const { data: dbSections } = await supabase
@@ -104,20 +108,9 @@ export function useSyncEngine() {
           .sort((a: Feature, b: Feature) => a.sort_order - b.sort_order),
       }));
 
-      // Compare timestamps: if Supabase is newer, update
-      const localSynced = readLS<string | null>(LS_SYNCED_AT, null);
-      const remoteMax = Math.max(
-        ...dbFeatures.map((f: Feature) => new Date(f.updated_at).getTime()),
-        ...dbSections.map((s: Section) => new Date(s.updated_at).getTime())
-      );
-
-      const localMax = localSynced ? new Date(localSynced).getTime() : 0;
-
-      if (remoteMax > localMax || merged.length > 0) {
-        dispatch({ type: 'SET_DATA', payload: merged });
-        writeLS(LS_SECTIONS, merged);
-        writeLS(LS_SYNCED_AT, new Date().toISOString());
-      }
+      dispatch({ type: 'SET_DATA', payload: merged });
+      writeLS(LS_SECTIONS, merged);
+      writeLS(LS_SYNCED_AT, new Date().toISOString());
     } catch (err) {
       console.error('Sync failed:', err);
     } finally {
@@ -147,7 +140,8 @@ export function useSyncEngine() {
           const { error } = await supabase.from(change.table).delete().eq('id', change.data.id);
           if (error) throw error;
         }
-      } catch {
+      } catch (err) {
+        console.error('Flush failed for', change.table, change.type, err);
         remaining.push(change);
       }
     }
