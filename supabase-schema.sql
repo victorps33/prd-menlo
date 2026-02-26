@@ -55,7 +55,14 @@ create policy "Authenticated users can update features"
 create policy "Authenticated users can delete features"
   on features for delete to authenticated using (true);
 
--- 5. Storage bucket (run in Dashboard or via API)
+-- 5. Anon policies (public read access without login)
+create policy "Anon can read sections"
+  on sections for select to anon using (true);
+
+create policy "Anon can read features"
+  on features for select to anon using (true);
+
+-- 6. Storage bucket (run in Dashboard or via API)
 -- Create a public bucket called 'screenshots'
 -- In Supabase Dashboard: Storage > New bucket > Name: screenshots > Public: yes
 

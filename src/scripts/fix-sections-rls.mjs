@@ -3,11 +3,11 @@ import pg from 'pg';
 const { Client } = pg;
 
 const client = new Client({
-  host: 'db.vomwlbumdrylohcgrufk.supabase.co',
+  host: 'db.libojlmynmxmntghjbhv.supabase.co',
   port: 5432,
   database: 'postgres',
   user: 'postgres',
-  password: 'Diadesol@123',
+  password: process.env.SUPABASE_DB_PASSWORD,
   ssl: { rejectUnauthorized: false },
 });
 
@@ -16,6 +16,7 @@ await client.connect();
 const policies = [
   `CREATE POLICY "Anon can read sections" ON sections FOR SELECT TO anon USING (true)`,
   `CREATE POLICY "Anon can update sections" ON sections FOR UPDATE TO anon USING (true)`,
+  `CREATE POLICY "Anon can read features" ON features FOR SELECT TO anon USING (true)`,
 ];
 
 for (const sql of policies) {

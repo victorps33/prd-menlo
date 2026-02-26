@@ -98,11 +98,11 @@ Cada aba funciona de forma independente. As mudanças aplicam imediatamente. O f
 ];
 
 const client = new Client({
-  host: 'db.vomwlbumdrylohcgrufk.supabase.co',
+  host: 'db.libojlmynmxmntghjbhv.supabase.co',
   port: 5432,
   database: 'postgres',
   user: 'postgres',
-  password: 'Diadesol@123',
+  password: process.env.SUPABASE_DB_PASSWORD,
   ssl: { rejectUnauthorized: false },
 });
 

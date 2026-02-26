@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const client = new pg.Client({
-  host: 'db.vomwlbumdrylohcgrufk.supabase.co',
+  host: 'db.libojlmynmxmntghjbhv.supabase.co',
   port: 5432,
   database: 'postgres',
   user: 'postgres',
@@ -43,7 +43,7 @@ async function run() {
 
   // Create storage bucket via Supabase API
   console.log('\nCreating screenshots storage bucket...');
-  const res = await fetch('https://vomwlbumdrylohcgrufk.supabase.co/storage/v1/bucket', {
+  const res = await fetch('https://libojlmynmxmntghjbhv.supabase.co/storage/v1/bucket', {
     method: 'POST',
     headers: {
       apikey: process.env.SUPABASE_SERVICE_KEY,
